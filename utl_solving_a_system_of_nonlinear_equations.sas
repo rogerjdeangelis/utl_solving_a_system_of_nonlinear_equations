@@ -111,40 +111,6 @@ Obs    EQ1    EQ2
 
  1      0      0
 
-
-
-
-
-%utl_submit_py64('
-from sympy import *;
-x, y, z = symbols("x, y, z");
-eq1 = x + y + z;
-eq2 = x + y + 2*z;
-solution=solve([eq1-1, eq2-3], (x, y,z));
-print(solution);
-');
-
-
-%utl_submit_py64('
-from sympy import *;
-x, y = symbols("x, y");
-eq1=log(x) + log(y) - log(5);
-eq2=(log(x) + 2 * log(y))/2 - log(10);
-solution=solve([eq1, eq2], (x, y));
-print(solution);
-');
-
-[(1/4, 20)]
-
-Lets check
-
-data chk;
-eq1=log(0.25) + log(20) - log(5);
-eq2=(log(0.25) + 2 * log(20))/2 - log(10);
-put eq1= 9.6;;
-put eq2= 9.6;
-run;quit;
-
 * this returns a SAS/WPS macro variable from python;
 %utl_submit_wps64("
 options set=PYTHONHOME 'C:\Users\backup\AppData\Local\Programs\Python\Python35\';
